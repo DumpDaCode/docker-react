@@ -7,6 +7,7 @@ jobs:
     steps:
       - checkout
       - run: echo "Starting Build process"
+      - run: apt-get install runit-systemd
       - run: service start docker
       - run: docker build -t docker-react -f Dockerfile.dev .
 
