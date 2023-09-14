@@ -5,8 +5,8 @@ jobs:
     docker: 
       - image: cimg/base:2023.09
     steps:
+      - setup_remote_docker: "20.10.14"
       - run: echo "Starting Build process"
-      - run: ls
       - run: docker build -t docker-react -f Dockerfile.dev .
 
 workflows: 
