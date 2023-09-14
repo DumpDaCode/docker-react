@@ -7,7 +7,7 @@ jobs:
     steps:
       - run: echo "Starting Build process"
       - run: ls
-      - run: service start docker
+      - run: systemctl start docker
       - run: docker build -t docker-react -f Dockerfile.dev .
 
 workflows: 
