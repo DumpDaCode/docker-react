@@ -1,0 +1,11 @@
+FROM node:14-alpine
+
+WORKDIR /app
+
+COPY package.json .
+RUN npm install
+
+# We may use some other tool in future or use this as base for other environments. Hence the below line is left unchanged
+COPY . .
+
+CMD ["npm", "run", "start"]
