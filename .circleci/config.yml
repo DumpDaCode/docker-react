@@ -1,0 +1,14 @@
+version: 1.0
+
+jobs:
+  build: 
+    docker: 
+      - image: docker:24.0.6-git
+    steps:
+      - run: echo "Starting Build process"
+      - run: docker -t docker-react -f Dockerfile.dev .
+
+workflows: 
+  build_project:
+    jobs:
+      - build
