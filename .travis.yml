@@ -18,5 +18,4 @@ deploy:
   on: 
     branch: master
   access_key_id: $AWS_ACCESS_KEY # Same name from Travis CI environment variables.
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY" # Same name from Travis CI environment variables.
+  secret_access_key: "$AWS_SECRET_KEY" # Same name from Travis CI environment variables.
