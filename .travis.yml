@@ -10,12 +10,13 @@ script:
 
 deploy: 
   provider: elasticbeanstalk
-  region: "eu-north-1" # take the region from your EBS URL
-  app: docker # same as the one in EBS
-  env: "Docker-env" # same as the one in EBS 
-  bucket_name: "elasticbeanstalk-eu-north-1-889019770946" # files are copied to S3 bucket and then EBS is notified to redeploy. Here name of S3 bucket is specified.
-  bucket_path: "docker" # S3 bukcet has many project folder in it. We need to specify path to our project. Same as app name.
+  region: 'eu-north-1' # take the region from your EBS URL
+  app: 'docker' # same as the one in EBS
+  env: 'Docker-env' # same as the one in EBS 
+  bucket_name: 'elasticbeanstalk-eu-north-1-889019770946' # files are copied to S3 bucket and then EBS is notified to redeploy. Here name of S3 bucket is specified.
+  bucket_path: 'docker' # S3 bukcet has many project folder in it. We need to specify path to our project. Same as app name.
   on: 
     branch: master
   access_key_id: $AWS_ACCESS_KEY # Same name from Travis CI environment variables.
-  secret_access_key:  "$AWS_SECRET_KEY" # Same name from Travis CI environment variables.
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY" # Same name from Travis CI environment variables.
